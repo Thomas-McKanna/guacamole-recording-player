@@ -1,16 +1,16 @@
-# Guacamole Recording Player
+# 🎥 Guacamole Recording Player
 
 A modern, containerized web application for playing session recordings created by [Apache Guacamole](https://guacamole.apache.org/). This project builds upon the archived [Glyptodon Enterprise Player](https://github.com/glyptodon/glyptodon-enterprise-player) to provide enhanced functionality and easier deployment.
 
-## Features
+## ✨ Features
 
-- **Local Recording Playback**: Play session recordings stored locally on your machine using the browser's File API
-- **Remote Recording Support**: Access recordings from remote URLs through a simple query parameter interface
-- **Containerized Deployment**: Easy deployment using Docker containers
-- **Static Web Application**: No server-side processing required
-- **Modern Web Interface**: Clean, responsive design for optimal viewing experience
+- **🎯 Local Recording Playback**: Play session recordings stored locally on your machine using the browser's File API
+- **🌐 Remote Recording Support**: Access recordings from remote URLs through a simple query parameter interface
+- **🐳 Containerized Deployment**: Easy deployment using Docker containers
+- **📦 Static Web Application**: No server-side processing required
+- **🎨 Modern Web Interface**: Clean, responsive design for optimal viewing experience
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Using Docker
 
@@ -26,7 +26,7 @@ The application will be available at `http://localhost:8080`
 2. Extract the contents to your web server's document root
 3. Configure your web server to serve the static files
 
-## Usage
+## 📖 Usage
 
 ### Local Recordings
 
@@ -48,7 +48,7 @@ You can access remote recordings in two ways:
    /remote?url=aHR0cHM6Ly9leGFtcGxlLmNvbS9wYXRoL3RvL3JlY29yZGluZw==
    ```
 
-### Important Note on Remote Recordings
+### ⚠️ Important Note on Remote Recordings
 
 When accessing remote recordings, the server hosting the recording must have appropriate CORS (Cross-Origin Resource Sharing) headers configured. The following headers are required:
 
@@ -58,7 +58,7 @@ Access-Control-Allow-Methods: GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type
 ```
 
-## Development
+## 🛠️ Development
 
 ### Building from Source
 
@@ -73,25 +73,15 @@ mvn package
 docker build -t guacamole-recording-player .
 ```
 
-### Testing Locally
-
-```bash
-# Using Python's built-in HTTP server
-./test.sh
-
-# Or specify a custom port
-./test.sh 8081
-```
-
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - Original work by Glyptodon Enterprise Player team
 - Apache Guacamole project for the recording format specification
