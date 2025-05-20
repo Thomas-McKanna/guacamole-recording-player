@@ -15,16 +15,10 @@ A modern, containerized web application for playing session recordings created b
 ### Using Docker
 
 ```bash
-docker run -p 8080:80 ghcr.io/yourusername/guacamole-recording-player
+docker run -p 8080:80 tmckanna940/guacamole-recording-player
 ```
 
 The application will be available at `http://localhost:8080`
-
-### Manual Installation
-
-1. Download the latest release from the [releases page](https://github.com/yourusername/guacamole-recording-player/releases)
-2. Extract the contents to your web server's document root
-3. Configure your web server to serve the static files
 
 ## 📖 Usage
 
@@ -64,7 +58,7 @@ Access-Control-Allow-Headers: Content-Type
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/guacamole-recording-player.git
+git clone https://github.com/Thomas-McKanna/guacamole-recording-player.git
 
 # Build the project
 mvn package
