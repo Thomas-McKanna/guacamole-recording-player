@@ -1,0 +1,33 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set this to your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+
+      - name: Build with Maven
+        run: mvn clean package
+
+      - name: Prepare docs directory
+        run: |
+          mkdir -p docs
+          cp -r target/apache-guacamole-player-1.1.0-1/* docs/
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
+          branch: gh-pages 

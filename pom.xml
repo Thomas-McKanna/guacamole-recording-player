@@ -183,6 +183,23 @@
                         </configuration>
                     </execution>
 
+                    <!-- Copy built files to docs directory for GitHub Pages -->
+                    <execution>
+                        <id>copy-to-docs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/docs</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.build.directory}/${project.build.finalName}</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+
                 </executions>
             </plugin>
 
