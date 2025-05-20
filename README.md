@@ -1,71 +1,98 @@
-Session Recording Player for Apache Guacamole
-=================================================
+# Guacamole Recording Player
 
-*apache-guacamole-player* is a web application for playing session
-recordings created by [Apache Guacamole](https://enterprise.guacamole.com/)
-or [Apache Guacamole](http://guacamole.apache.org/). The web application is
-fully static, relying on the JavaScript
-[`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object to
-replay a session recording that is stored locally (on the same machine as the
-web browser).
+A modern, containerized web application for playing session recordings created by [Apache Guacamole](https://guacamole.apache.org/). This project builds upon the archived [Glyptodon Enterprise Player](https://github.com/glyptodon/glyptodon-enterprise-player) to provide enhanced functionality and easier deployment.
 
-To replay your own session recordings, you may serve this web application on
-your own server, or use Glyptodon's publicly-hosted copy at
-**https://player.guacamole.com/**.
+## Features
 
-Installation
-------------
+- **Local Recording Playback**: Play session recordings stored locally on your machine using the browser's File API
+- **Remote Recording Support**: Access recordings from remote URLs through a simple query parameter interface
+- **Containerized Deployment**: Easy deployment using Docker containers
+- **Static Web Application**: No server-side processing required
+- **Modern Web Interface**: Clean, responsive design for optimal viewing experience
 
-Releases of apache-guacamole-player can be found in the [releases section
-of the GitHub repository](https://github.com/guacamole/apache-guacamole-player/releases) and are packaged as `.tar.gz` archives containing the static files
-which must be served to host the web application. To install the web
-application, the contents of this archive only need to be extracted and placed
-within a location which will be served by your web server.
+## Quick Start
 
-For example, if you have a web server running at `http://YOURSERVER/` which
-serves static files from `/var/www`, and you wish to serve
-apache-guacamole-player from `http://YOURSERVER/player/`:
+### Using Docker
 
-```console
-$ tar -xzf apache-guacamole-player-1.1.0-1.tar.gz
-$ mv apache-guacamole-player-1.1.0-1/ /var/www/player
+```bash
+docker run -p 8080:80 ghcr.io/yourusername/guacamole-recording-player
 ```
 
-Building from Source
---------------------
+The application will be available at `http://localhost:8080`
 
-*apache-guacamole-player* is built using Apache Maven. As the web
-application is static, the build process mainly involves bundling and minifying
-JavaScript and CSS, and packing all resulting files within a `.tar.gz` archive.
+### Manual Installation
 
-To build the web application using Maven:
+1. Download the latest release from the [releases page](https://github.com/yourusername/guacamole-recording-player/releases)
+2. Extract the contents to your web server's document root
+3. Configure your web server to serve the static files
 
-```console
-$ mvn package
+## Usage
+
+### Local Recordings
+
+1. Open the application in your web browser
+2. Click "Choose File" to select a local recording file
+3. The recording will begin playing automatically
+
+### Remote Recordings
+
+You can access remote recordings in two ways:
+
+1. **Direct URL**:
+   ```
+   /remote?url=https://example.com/path/to/recording
+   ```
+
+2. **Base64 Encoded URL**:
+   ```
+   /remote?url=aHR0cHM6Ly9leGFtcGxlLmNvbS9wYXRoL3RvL3JlY29yZGluZw==
+   ```
+
+### Important Note on Remote Recordings
+
+When accessing remote recordings, the server hosting the recording must have appropriate CORS (Cross-Origin Resource Sharing) headers configured. The following headers are required:
+
+```
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, OPTIONS
+Access-Control-Allow-Headers: Content-Type
 ```
 
-Once built, a `.tar.gz` archive containing the web application can be found
-within the `target/` subdirectory.
+## Development
 
-### Testing a Build Locally
+### Building from Source
 
-Once built, the web application can be tested locally if Python 3 is installed
-using the provided `test.sh` convenience script. Running `test.sh` will start
-the HTTP server included with Python, serving the static web application on
-port 8080:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/guacamole-recording-player.git
 
-```console
-$ ./test.sh
+# Build the project
+mvn package
+
+# Build the Docker image
+docker build -t guacamole-recording-player .
 ```
 
-This port can be overridden by specifying a different port on the command line:
+### Testing Locally
 
-```console
-$ ./test.sh 8081
+```bash
+# Using Python's built-in HTTP server
+./test.sh
+
+# Or specify a custom port
+./test.sh 8081
 ```
 
-**NOTE:** If running test.sh, beware that executing `mvn clean` will break the
-currently deployed web application, as `mvn clean` removes the `target/`
-directory. To take recent changes into account without rerunning `test.sh`, just
-run `mvn package` without "clean".
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Original work by Glyptodon Enterprise Player team
+- Apache Guacamole project for the recording format specification
 
