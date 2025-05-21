@@ -1,0 +1,181 @@
+/*
+ * Copyright (C) 2025 Thomas McKanna
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+.guac-player-app {
+  background: black;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.guac-player-app guac-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.guac-player-app .guac-player-selected-file {
+  font-size: 1.5em;
+  font-weight: normal;
+
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+
+  margin: 8px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guac-player-app .guac-player-help-no-recording,
+.guac-player-app .guac-player-help-recording-error {
+  margin: 8px;
+  max-width: 480px;
+}
+
+.guac-player-app .guac-player-recording-selector {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.guac-player-app .guac-player-button {
+  display: inline-block;
+
+  border: 2px solid white;
+  border-radius: 0;
+  background: black;
+  color: white;
+  font-weight: bold;
+
+  padding: 0.5em 1em;
+  margin: 8px;
+}
+
+.guac-player-app .guac-player-controls {
+  padding: 0.25em;
+}
+
+.guac-player-app .guac-player-recording-selector,
+.guac-player-app .guac-player-controls {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.guac-player-app.playing .guac-player-recording-selector,
+.guac-player-app.playing .guac-player-controls {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s linear 0.25s;
+  -moz-transition: opacity 0.25s linear 0.25s;
+  -o-transition: opacity 0.25s linear 0.25s;
+  transition: opacity 0.25s linear 0.25s;
+}
+
+.guac-player-app.paused .guac-player-recording-selector,
+.guac-player-app.paused .guac-player-controls,
+.guac-player-app.playing:hover .guac-player-recording-selector,
+.guac-player-app.playing:hover .guac-player-controls {
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+
+  /*
+     * NOTE: The nonsensical "0.00s" above is a workaround for YUI Compressor's
+     * incorrect minification of "0s" to "0". There appears to be a fix merged,
+     * however the Maven plugin which leverages YUI Compressor is still
+     * affected.
+     *
+     * See: https://github.com/yui/yuicompressor/issues/246
+     */
+}
+
+.guac-player-app.no-recording .guac-player-recording-selector {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.guac-player-app.no-recording guac-file-chooser {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.guac-player-recording-selector h1 .fas {
+  margin-right: 8px;
+  margin-left: 2px;
+}

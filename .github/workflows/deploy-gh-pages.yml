@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build with Docker
+        run: |
+          docker build -t guacamole-player .
+          docker create --name temp-container guacamole-player
+          docker cp temp-container:/usr/share/nginx/html/. ./dist/
+          docker rm temp-container
+
+      - name: Update asset paths
+        run: |
+          find ./dist -type f -name "*.html" -exec sed -i 's|href="/|href="/guacamole-recording-player/|g' {} +
+          find ./dist -type f -name "*.html" -exec sed -i 's|src="/|src="/guacamole-recording-player/|g' {} +
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages

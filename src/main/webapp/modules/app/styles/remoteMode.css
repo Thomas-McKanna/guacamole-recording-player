@@ -1,0 +1,88 @@
+/*
+ * Copyright (C) 2025 Thomas McKanna
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+.glen-player-remote-status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glen-player-remote-loading,
+.glen-player-remote-error {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.glen-player-remote-loading i {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.glen-player-remote-error {
+  background-color: rgba(255, 0, 0, 0.3);
+  border: 2px solid #ff3333;
+}
+
+.glen-player-remote-error i {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: #ff3333;
+}
+
+.glen-player-remote-error p {
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.glen-player-app.remote-mode .glen-player-recording-selector {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.glen-player-help-recording-error {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-left: 4px solid #ff3333;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  max-width: 800px !important;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.glen-player-help-recording-error i {
+  color: #ff3333;
+  margin-right: 8px;
+  font-size: 20px;
+}
