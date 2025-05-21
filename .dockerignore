@@ -1,7 +1,0 @@
-.git
-.gitignore
-target/
-*.tar.gz
-README.md
-LICENSE
-test.sh 
