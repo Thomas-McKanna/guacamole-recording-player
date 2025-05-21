@@ -147,7 +147,7 @@
   height: 100%;
 }
 
-.guac-player-app.no-recording glen-file-chooser {
+.guac-player-app.no-recording guac-file-chooser {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

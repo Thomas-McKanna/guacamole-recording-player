@@ -20,32 +20,32 @@
  * THE SOFTWARE.
  */
 
-.glen-welcome {
+.guac-welcome {
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.glen-welcome img {
+.guac-welcome img {
   max-height: 1.25em;
   vertical-align: middle;
   position: relative;
   top: -0.125em;
 }
 
-.glen-welcome h1,
-.glen-welcome h2 {
+.guac-welcome h1,
+.guac-welcome h2 {
   display: inline-block;
   font-size: 1.5em;
   font-weight: normal;
   margin: 8px;
 }
 
-.glen-welcome h1 .guacamole {
+.guac-welcome h1 .guacamole {
   font-weight: bold;
 }
 
-.glen-welcome h2 {
+.guac-welcome h2 {
   border-left: 1px solid white;
   padding-left: 8px;
   margin-left: 0;

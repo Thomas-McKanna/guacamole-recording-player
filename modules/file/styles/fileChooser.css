@@ -20,6 +20,6 @@
  * THE SOFTWARE.
  */
 
-glen-file-chooser input[type="file"] {
+guac-file-chooser input[type="file"] {
   display: none;
 }

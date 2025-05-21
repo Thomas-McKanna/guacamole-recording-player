@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-.guac-player-remote-status {
+.glen-player-remote-status {
   position: fixed;
   top: 0;
   left: 0;
@@ -34,8 +34,8 @@
   justify-content: center;
 }
 
-.guac-player-remote-loading,
-.guac-player-remote-error {
+.glen-player-remote-loading,
+.glen-player-remote-error {
   text-align: center;
   color: white;
   max-width: 800px;
@@ -43,33 +43,33 @@
   border-radius: 8px;
 }
 
-.guac-player-remote-loading i {
+.glen-player-remote-loading i {
   font-size: 3em;
   margin-bottom: 0.5em;
 }
 
-.guac-player-remote-error {
+.glen-player-remote-error {
   background-color: rgba(255, 0, 0, 0.3);
   border: 2px solid #ff3333;
 }
 
-.guac-player-remote-error i {
+.glen-player-remote-error i {
   font-size: 3em;
   margin-bottom: 0.5em;
   color: #ff3333;
 }
 
-.guac-player-remote-error p {
+.glen-player-remote-error p {
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
 }
 
-.guac-player-app.remote-mode .guac-player-recording-selector {
+.glen-player-app.remote-mode .glen-player-recording-selector {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.guac-player-help-recording-error {
+.glen-player-help-recording-error {
   background-color: rgba(255, 0, 0, 0.2);
   border-left: 4px solid #ff3333;
   padding: 15px;
@@ -81,7 +81,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.guac-player-help-recording-error i {
+.glen-player-help-recording-error i {
   color: #ff3333;
   margin-right: 8px;
   font-size: 20px;

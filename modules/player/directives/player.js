@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,38 +21,38 @@
  */
 
 /**
- * Directive which plays back Apache Guacamole / Apache Guacamole session
+ * Directive which plays back Glyptodon Enterprise / Apache Guacamole session
  * recordings. This directive emits the following events based on state changes
  * within the current recording:
  *
- *     "glenPlayerLoading":
+ *     "guacPlayerLoading":
  *         A new recording has been selected and is now loading.
  *
- *     "glenPlayerError":
+ *     "guacPlayerError":
  *         The current recording cannot be loaded or played due to an error.
  *         The recording may be unreadable (lack of permissions) or corrupt
  *         (protocol error).
  *
- *     "glenPlayerProgress"
+ *     "guacPlayerProgress"
  *         Additional data has been loaded for the current recording and the
  *         recording's duration has changed. The new duration in milliseconds
  *         and the number of bytes loaded so far are passed to the event.
  *
- *     "glenPlayerLoaded"
+ *     "guacPlayerLoaded"
  *         The current recording has finished loading.
  *
- *     "glenPlayerPlay"
+ *     "guacPlayerPlay"
  *         Playback of the current recording has started or has been resumed.
  *
- *     "glenPlayerPause"
+ *     "guacPlayerPause"
  *         Playback of the current recording has been paused.
  *
- *     "glenPlayerSeek"
+ *     "guacPlayerSeek"
  *         The playback position of the current recording has changed. The new
  *         position within the recording is passed to the event as the number
  *         of milliseconds since the start of the recording.
  */
-angular.module('player').directive('glenPlayer', ['$injector', function glenPlayer($injector) {
+angular.module('player').directive('guacPlayer', ['$injector', function guacPlayer($injector) {
 
     // Required types
     var SessionRecording = $injector.get('SessionRecording');
@@ -74,7 +74,7 @@ angular.module('player').directive('glenPlayer', ['$injector', function glenPlay
     };
 
     config.controller = ['$scope', '$element', '$injector',
-        function glenPlayerController($scope) {
+        function guacPlayerController($scope) {
 
         /**
          * SessionRecording instance to be used to playback the session
@@ -287,14 +287,14 @@ angular.module('player').directive('glenPlayer', ['$injector', function glenPlay
                 // Notify listeners when the recording is completely loaded
                 $scope.recording.onload = function recordingLoaded() {
                     $scope.operationText = null;
-                    $scope.$emit('glenPlayerLoaded');
+                    $scope.$emit('guacPlayerLoaded');
                     $scope.$evalAsync();
                 };
 
                 // Notify listeners if an error occurs
                 $scope.recording.onerror = function recordingFailed(message) {
                     $scope.operationText = null;
-                    $scope.$emit('glenPlayerError', message);
+                    $scope.$emit('guacPlayerError', message);
                     $scope.$evalAsync();
                 };
 
@@ -302,19 +302,19 @@ angular.module('player').directive('glenPlayer', ['$injector', function glenPlay
                 // loaded
                 $scope.recording.onprogress = function recordingLoadProgressed(duration, current) {
                     $scope.operationProgress = current / blob.size;
-                    $scope.$emit('glenPlayerProgress', duration, current);
+                    $scope.$emit('guacPlayerProgress', duration, current);
                     $scope.$evalAsync();
                 };
 
                 // Notify listeners when playback has started/resumed
                 $scope.recording.onplay = function playbackStarted() {
-                    $scope.$emit('glenPlayerPlay');
+                    $scope.$emit('guacPlayerPlay');
                     $scope.$evalAsync();
                 };
 
                 // Notify listeners when playback has paused
                 $scope.recording.onpause = function playbackPaused() {
-                    $scope.$emit('glenPlayerPause');
+                    $scope.$emit('guacPlayerPause');
                     $scope.$evalAsync();
                 };
 
@@ -332,7 +332,7 @@ angular.module('player').directive('glenPlayer', ['$injector', function glenPlay
                         $scope.operationProgress = current / total;
                     }
 
-                    $scope.$emit('glenPlayerSeek', position);
+                    $scope.$emit('guacPlayerSeek', position);
                     $scope.$evalAsync();
 
                 };
@@ -345,7 +345,7 @@ angular.module('player').directive('glenPlayer', ['$injector', function glenPlay
                     $scope.operationText = null;
                 };
 
-                $scope.$emit('glenPlayerLoading');
+                $scope.$emit('guacPlayerLoading');
 
             }
 

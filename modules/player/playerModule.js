@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@
  */
 
 /**
- * Module for the Apache Guacamole session recording player.
+ * Module for the Glyptodon Enterprise session recording player.
  */
 angular.module('player', [
     'templates-main'

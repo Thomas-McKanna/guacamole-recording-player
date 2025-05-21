@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
  * Directive which contains a given Guacamole.Display, automatically scaling
  * the display to fit available space.
  */
-angular.module('player').directive('glenPlayerDisplay', [function glenPlayerDisplay() {
+angular.module('player').directive('guacPlayerDisplay', [function guacPlayerDisplay() {
 
     var config = {
         restrict : 'E',
@@ -43,10 +43,10 @@ angular.module('player').directive('glenPlayerDisplay', [function glenPlayerDisp
 
     };
 
-    config.controller = ['$scope', '$element', function glenPlayerDisplayController($scope, $element) {
+    config.controller = ['$scope', '$element', function guacPlayerDisplayController($scope, $element) {
 
         /**
-         * The root element of this instance of the glenPlayerDisplay
+         * The root element of this instance of the guacPlayerDisplay
          * directive.
          *
          * @type {Element}
@@ -68,7 +68,7 @@ angular.module('player').directive('glenPlayerDisplay', [function glenPlayerDisp
          *
          * @type {HTMLObjectElement}
          */
-        var resizeSensor = $element.find('.glen-resize-sensor')[0];
+        var resizeSensor = $element.find('.guac-resize-sensor')[0];
 
         /**
          * Rescales the Guacamole.Display currently assigned to $scope.display

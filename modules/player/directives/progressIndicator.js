@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
  * Directive which displays an indicator showing the current progress of an
  * arbitrary operation.
  */
-angular.module('player').directive('glenPlayerProgressIndicator', [function glenPlayerProgressIndicator() {
+angular.module('player').directive('guacPlayerProgressIndicator', [function guacPlayerProgressIndicator() {
 
     var config = {
         restrict : 'E',
@@ -43,7 +43,7 @@ angular.module('player').directive('glenPlayerProgressIndicator', [function glen
 
     };
 
-    config.controller = ['$scope', function glenPlayerProgressIndicatorController($scope) {
+    config.controller = ['$scope', function guacPlayerProgressIndicatorController($scope) {
 
         /**
          * The current progress of the operation as a percentage. This value is

@@ -71,25 +71,25 @@ angular.module('app').controller('appController', ['$scope', 'urlParamService', 
     $scope.downloading = false;
 
     // Clear any errors if a new recording is loading
-    $scope.$on('glenPlayerLoading', function loadingStarted() {
+    $scope.$on('guacPlayerLoading', function loadingStarted() {
         $scope.error = false;
         $scope.errorMessage = null;
     });
 
     // Update error status if a failure occurs
-    $scope.$on('glenPlayerError', function recordingError(event, message) {
+    $scope.$on('guacPlayerError', function recordingError(event, message) {
         $scope.selectedRecording = null;
         $scope.error = true;
         $scope.errorMessage = message || 'An error occurred while loading the recording.';
     });
 
     // Update playing/paused status when playback starts
-    $scope.$on('glenPlayerPlay', function playbackStarted() {
+    $scope.$on('guacPlayerPlay', function playbackStarted() {
         $scope.playing = true;
     });
 
     // Update playing/paused status when playback stops
-    $scope.$on('glenPlayerPause', function playbackStopped() {
+    $scope.$on('guacPlayerPause', function playbackStopped() {
         $scope.playing = false;
     });
     

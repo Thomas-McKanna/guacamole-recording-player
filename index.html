@@ -52,7 +52,7 @@
         <div class="guac-player-recording-selector" ng-hide="remoteMode && !error">
             <h1 ng-show="selectedRecording"
                 class="guac-player-selected-file"><i class="fas fa-film"></i>{{ selectedRecording.name }}</h1>
-            <glen-file-chooser file="selectedRecording" ng-hide="remoteMode">
+            <guac-file-chooser file="selectedRecording" ng-hide="remoteMode">
                 <p class="guac-player-help-no-recording"
                    ng-hide="selectedRecording || error">No session recording is
                 currently open. Please select a recording to view.</p>
@@ -60,7 +60,7 @@
                    ng-hide="selectedRecording || !error"><i class="fas fa-exclamation-triangle"></i>
                 {{ errorMessage || 'The selected recording cannot be played. The recording may be corrupt, or you may not have permission to read the recording. Please select a different recording.' }}</p>
                 <span class="guac-player-button">Browse...</span>
-            </glen-file-chooser>
+            </guac-file-chooser>
         </div>
         
         <!-- Remote file downloading indicator -->

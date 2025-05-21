@@ -147,7 +147,7 @@
   height: 100%;
 }
 
-.guac-player-app.no-recording glen-file-chooser {
+.guac-player-app.no-recording guac-file-chooser {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -201,7 +201,7 @@
  * THE SOFTWARE.
  */
 
-glen-file-chooser input[type="file"] {
+guac-file-chooser input[type="file"] {
   display: none;
 }
 /*
@@ -399,7 +399,7 @@ guac-player-display .guac-player-display-container {
   flex: 0 0 auto;
 }
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -516,7 +516,7 @@ guac-player-progress-indicator
  * THE SOFTWARE.
  */
 
-.guac-player-remote-status {
+.glen-player-remote-status {
   position: fixed;
   top: 0;
   left: 0;
@@ -530,8 +530,8 @@ guac-player-progress-indicator
   justify-content: center;
 }
 
-.guac-player-remote-loading,
-.guac-player-remote-error {
+.glen-player-remote-loading,
+.glen-player-remote-error {
   text-align: center;
   color: white;
   max-width: 800px;
@@ -539,33 +539,33 @@ guac-player-progress-indicator
   border-radius: 8px;
 }
 
-.guac-player-remote-loading i {
+.glen-player-remote-loading i {
   font-size: 3em;
   margin-bottom: 0.5em;
 }
 
-.guac-player-remote-error {
+.glen-player-remote-error {
   background-color: rgba(255, 0, 0, 0.3);
   border: 2px solid #ff3333;
 }
 
-.guac-player-remote-error i {
+.glen-player-remote-error i {
   font-size: 3em;
   margin-bottom: 0.5em;
   color: #ff3333;
 }
 
-.guac-player-remote-error p {
+.glen-player-remote-error p {
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
 }
 
-.guac-player-app.remote-mode .guac-player-recording-selector {
+.glen-player-app.remote-mode .glen-player-recording-selector {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.guac-player-help-recording-error {
+.glen-player-help-recording-error {
   background-color: rgba(255, 0, 0, 0.2);
   border-left: 4px solid #ff3333;
   padding: 15px;
@@ -577,13 +577,13 @@ guac-player-progress-indicator
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.guac-player-help-recording-error i {
+.glen-player-help-recording-error i {
   color: #ff3333;
   margin-right: 8px;
   font-size: 20px;
 }
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -609,13 +609,13 @@ guac-player-progress-indicator
  */
 
 input[type="range"] {
-  background: transparent;
-  width: 100%;
-  margin: 0;
+    background: transparent;
+    width: 100%;
+    margin: 0;
 }
 
 input[type="range"]:focus {
-  outline: none;
+    outline: none;
 }
 
 /*
@@ -623,34 +623,38 @@ input[type="range"]:focus {
  */
 
 input[type="range"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-  border: none;
-  border-radius: 0;
-  background: #5af;
 
-  width: 100%;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 
-  cursor: pointer;
+    width: 100%;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  -webkit-appearance: none;
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+
+    -webkit-appearance: none;
+    cursor: pointer;
+
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #5af;
+    background: #5AF;
 }
 
 /*
@@ -658,25 +662,29 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
  */
 
 input[type="range"]::-moz-range-track {
-  border: none;
-  border-radius: 0;
-  background: #5af;
 
-  width: 100%;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 
-  cursor: pointer;
+    width: 100%;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-moz-range-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 /*
@@ -684,37 +692,41 @@ input[type="range"]::-moz-range-thumb {
  */
 
 input[type="range"]::-ms-track {
-  width: 100%;
-  height: 0.5em;
-  margin: 0;
 
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  color: transparent;
+    width: 100%;
+    height: 0.5em;
+    margin: 0;
 
-  cursor: pointer;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: transparent;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-ms-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
-  margin: 0;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+    margin: 0;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-ms-fill-lower,
 input[type="range"]::-ms-fill-upper,
 input[type="range"]:focus::-ms-fill-lower,
 input[type="range"]:focus::-ms-fill-upper {
-  border: none;
-  border-radius: 0;
-  background: #5af;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 }
 /*
  * Copyright (C) 2025 Thomas McKanna
@@ -777,32 +789,32 @@ input[type="range"]:focus::-ms-fill-upper {
  * THE SOFTWARE.
  */
 
-.glen-welcome {
+.guac-welcome {
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.glen-welcome img {
+.guac-welcome img {
   max-height: 1.25em;
   vertical-align: middle;
   position: relative;
   top: -0.125em;
 }
 
-.glen-welcome h1,
-.glen-welcome h2 {
+.guac-welcome h1,
+.guac-welcome h2 {
   display: inline-block;
   font-size: 1.5em;
   font-weight: normal;
   margin: 8px;
 }
 
-.glen-welcome h1 .guacamole {
+.guac-welcome h1 .guacamole {
   font-weight: bold;
 }
 
-.glen-welcome h2 {
+.guac-welcome h2 {
   border-left: 1px solid white;
   padding-left: 8px;
   margin-left: 0;

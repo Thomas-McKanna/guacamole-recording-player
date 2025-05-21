@@ -49,7 +49,7 @@ angular.module('templates-main', []).run(['$templateCache', function($templateCa
 	"</div>");
 	$templateCache.put('modules/player/templates/playerDisplay.html',
 	"<div class=\"guac-player-display-container\"></div>\n" +
-	"<object class=\"glen-resize-sensor\" type=\"text/html\"\n" +
+	"<object class=\"guac-resize-sensor\" type=\"text/html\"\n" +
 	"        data=\"modules/player/templates/resize-sensor.html\"\n" +
 	"        aria-hidden=\"true\" alt=\"\"></object>");
 	$templateCache.put('modules/player/templates/progressIndicator.html',
@@ -69,7 +69,7 @@ angular.module('templates-main', []).run(['$templateCache', function($templateCa
 	"<!DOCTYPE html>\n" +
 	"<html lang=\"en\">\n" +
 	"    <head>\n" +
-	"        <title>Apache Guacamole - Session Recording Player (Resize Sensor)</title>\n" +
+	"        <title>Glyptodon Enterprise - Session Recording Player (Resize Sensor)</title>\n" +
 	"        <meta charset=\"utf-8\">\n" +
 	"        <meta http-equiv=\"x-ua-compatible\" content=\"IE=edge\">\n" +
 	"    </head>\n" +

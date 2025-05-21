@@ -23,7 +23,7 @@
 /**
  * Directive which allows the user to manually select a file.
  */
-angular.module('file').directive('glenFileChooser', [function glenFileChooser() {
+angular.module('file').directive('guacFileChooser', [function guacFileChooser() {
 
     var config = {
         restrict : 'E',
@@ -42,7 +42,7 @@ angular.module('file').directive('glenFileChooser', [function glenFileChooser() 
 
     };
 
-    config.controller = ['$scope', '$element', function glenFileChooserController($scope, $element) {
+    config.controller = ['$scope', '$element', function guacFileChooserController($scope, $element) {
 
         // Update file URL when a new file is selected
         $element.find('input[type="file"]').on('change', function newRecordingSelected() {

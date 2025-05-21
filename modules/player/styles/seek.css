@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Thomas McKanna
+ * Copyright (C) 2019 Glyptodon, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,13 +25,13 @@
  */
 
 input[type="range"] {
-  background: transparent;
-  width: 100%;
-  margin: 0;
+    background: transparent;
+    width: 100%;
+    margin: 0;
 }
 
 input[type="range"]:focus {
-  outline: none;
+    outline: none;
 }
 
 /*
@@ -39,34 +39,38 @@ input[type="range"]:focus {
  */
 
 input[type="range"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-  border: none;
-  border-radius: 0;
-  background: #5af;
 
-  width: 100%;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 
-  cursor: pointer;
+    width: 100%;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  -webkit-appearance: none;
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+
+    -webkit-appearance: none;
+    cursor: pointer;
+
 }
 
 input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #5af;
+    background: #5AF;
 }
 
 /*
@@ -74,25 +78,29 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
  */
 
 input[type="range"]::-moz-range-track {
-  border: none;
-  border-radius: 0;
-  background: #5af;
 
-  width: 100%;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 
-  cursor: pointer;
+    width: 100%;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-moz-range-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+
+    cursor: pointer;
+
 }
 
 /*
@@ -100,35 +108,39 @@ input[type="range"]::-moz-range-thumb {
  */
 
 input[type="range"]::-ms-track {
-  width: 100%;
-  height: 0.5em;
-  margin: 0;
 
-  border: none;
-  border-radius: 0;
-  background: transparent;
-  color: transparent;
+    width: 100%;
+    height: 0.5em;
+    margin: 0;
 
-  cursor: pointer;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: transparent;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-ms-thumb {
-  border: none;
-  border-radius: 0;
-  background: white;
 
-  width: 3px;
-  height: 0.5em;
-  margin: 0;
+    border: none;
+    border-radius: 0;
+    background: white;
 
-  cursor: pointer;
+    width: 3px;
+    height: 0.5em;
+    margin: 0;
+
+    cursor: pointer;
+
 }
 
 input[type="range"]::-ms-fill-lower,
 input[type="range"]::-ms-fill-upper,
 input[type="range"]:focus::-ms-fill-lower,
 input[type="range"]:focus::-ms-fill-upper {
-  border: none;
-  border-radius: 0;
-  background: #5af;
+    border: none;
+    border-radius: 0;
+    background: #5AF;
 }
