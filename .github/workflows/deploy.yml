@@ -12,19 +12,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up JDK 8
-        uses: actions/setup-java@v3
-        with:
-          java-version: '8'
-          distribution: 'adopt'
-
-      - name: Build with Maven
-        run: mvn clean package
-
-      - name: Prepare docs directory
+      - name: Build with Docker
         run: |
-          mkdir -p docs
-          cp -r target/apache-guacamole-player-1.1.0-1/* docs/
+          docker build -t guacamole-player .
+          docker create --name temp-container guacamole-player
+          docker cp temp-container:/usr/share/nginx/html/. docs/
+          docker rm temp-container
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
