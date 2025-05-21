@@ -2,6 +2,8 @@
 
 A modern, containerized web application for playing session recordings created by [Apache Guacamole](https://guacamole.apache.org/). This project builds upon the archived [Glyptodon Enterprise Player](https://github.com/glyptodon/apache-guacamole-player) to provide enhanced functionality and easier deployment.
 
+https://github.com/user-attachments/assets/d47abfb1-101e-4d23-bae5-432d4b1d2ec3
+
 ## 🚀 [Try it now!](https://thomas-mckanna.github.io/guacamole-recording-player/)
 
 ## ✨ Features
