@@ -166,6 +166,7 @@ angular.module('app', [
     'ngRoute'
 ]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     // Use hash location strategy for GitHub Pages compatibility
+    $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix('');
     
     // Configure routes
