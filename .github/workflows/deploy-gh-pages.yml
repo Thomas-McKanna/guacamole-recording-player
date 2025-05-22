@@ -22,11 +22,6 @@ jobs:
           docker cp temp-container:/usr/share/nginx/html/. ./dist/
           docker rm temp-container
 
-      - name: Update asset paths
-        run: |
-          find ./dist -type f -name "*.html" -exec sed -i 's|href="/|href="/guacamole-recording-player/|g' {} +
-          find ./dist -type f -name "*.html" -exec sed -i 's|src="/|src="/guacamole-recording-player/|g' {} +
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
