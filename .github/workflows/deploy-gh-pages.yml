@@ -22,9 +22,6 @@ jobs:
           docker cp temp-container:/usr/share/nginx/html/. ./dist/
           docker rm temp-container
 
-      - name: Setup 404 fallback
-        run: cp ./dist/index.html ./dist/404.html
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
