@@ -165,8 +165,8 @@ angular.module('app', [
     'templates-main',
     'ngRoute'
 ]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-    // Enable HTML5 mode for clean URLs
-    $locationProvider.html5Mode(true);
+    // Use hash location strategy for GitHub Pages compatibility
+    $locationProvider.hashPrefix('');
     
     // Configure routes
     $routeProvider
