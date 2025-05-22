@@ -17,16 +17,9 @@ jobs:
 
       - name: Build with Docker
         run: |
-          # Build the Docker image
           docker build -t guacamole-player .
-
-          # Create a temporary container
           docker create --name temp-container guacamole-player
-
-          # Copy the built application from the container to the dist directory
           docker cp temp-container:/usr/share/nginx/html/. ./dist/
-
-          # Remove the temporary container
           docker rm temp-container
 
       - name: Deploy to GitHub Pages
