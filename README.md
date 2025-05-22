@@ -38,12 +38,12 @@ You can access remote recordings in two ways:
 
 1. **Direct URL**:
    ```
-   /remote?url=https://example.com/path/to/recording
+   /#/remote?url=https://example.com/path/to/recording
    ```
 
 2. **Base64 Encoded URL**:
    ```
-   /remote?url=aHR0cHM6Ly9leGFtcGxlLmNvbS9wYXRoL3RvL3JlY29yZGluZw==
+   /#/remote?url=aHR0cHM6Ly9leGFtcGxlLmNvbS9wYXRoL3RvL3JlY29yZGluZw==
    ```
 
 ### ⚠️ Important Note on Remote Recordings
