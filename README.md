@@ -56,6 +56,21 @@ Access-Control-Allow-Methods: GET, OPTIONS
 Access-Control-Allow-Headers: Content-Type
 ```
 
+For example, if you are using an AWS S3 bucket, you'd need a CORS policy like this
+(or restrict however you'd like):
+
+```
+[
+  {
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["GET", "HEAD"],
+    "AllowedOrigins": ["*"],
+    "ExposeHeaders": [],
+    "MaxAgeSeconds": 3000
+  }
+]
+```
+
 ## 🛠️ Development
 
 ### Building from Source
